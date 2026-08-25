@@ -1,0 +1,4 @@
+SSO idea:
+
+When trying to log into a given username and password, an SSO code is sent out, after which the user needs to input the SSO code into the login to login as admin.
+The SSO is actually inside of the network traffic, so the attacker needs to be able to use burpsuite, and intercept the receiving packet which contains the SSO login code.

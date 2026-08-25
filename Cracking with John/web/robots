@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /dashboard.php
+Disallow: /admin/
+
+# NOTE: staging db REMOVE BEFORE PRODUCTION
+# MySQL connection details for maintenance scripts
+#   host: db
+#   database: john_challenge
+#   user: website_user
+#   password: change_me

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Public Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #020617;
+            color: #e5e7eb;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+        .shell {
+            width: 100%;
+            max-width: 720px;
+            background: #020617;
+            border-radius: 18px;
+            border: 1px solid #1f2937;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgb(15 23 42 / 0.75);
+        }
+        .header {
+            position: relative;
+        }
+        .cover {
+            height: 140px;
+            background: radial-gradient(circle at top left, #f97316, #0f172a 55%, #22c55e 100%);
+        }
+        .avatar {
+            position: absolute;
+            left: 1.5rem;
+            bottom: -2.5rem;
+            width: 80px;
+            height: 80px;
+            border-radius: 9999px;
+            border: 4px solid #020617;
+            background: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        .avatar span {
+            color: #facc15;
+        }
+        .profile-main {
+            padding: 3.5rem 1.5rem 1rem;
+            border-bottom: 1px solid #1f2937;
+        }
+        .name-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .name {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .handle {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-top: 0.5rem;
+        }
+        .meta span::before {
+            content: "· ";
+        }
+        .meta span:first-child::before {
+            content: "";
+        }
+        .bio {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: #e5e7eb;
+        }
+        .counts {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+        .counts strong {
+            color: #e5e7eb;
+        }
+        .posts-header {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #6b7280;
+            border-bottom: 1px solid #1f2937;
+        }
+        .posts {
+            padding: 0.5rem 0;
+        }
+        .post {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.9rem 1.5rem;
+            border-bottom: 1px solid #111827;
+        }
+        .post:last-child {
+            border-bottom: none;
+        }
+        .post-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 9999px;
+            background: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .post-avatar span {
+            color: #facc15;
+        }
+        .post-main {
+            flex: 1;
+            min-width: 0;
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.15rem;
+        }
+        .post-name {
+            font-weight: 600;
+        }
+        .post-handle {
+            color: #9ca3af;
+        }
+        .post-dot {
+            color: #4b5563;
+        }
+        .post-time {
+            color: #6b7280;
+        }
+        .post-text {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .post-meta {
+            margin-top: 0.35rem;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        .tag {
+            color: #60a5fa;
+        }
+        a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .note {
+            margin-top: 0.75rem;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        @media (max-width: 480px) {
+            .shell {
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="shell" aria-label="Public profile">
+        <header class="header">
+            <div class="cover"></div>
+            <div class="avatar"><span>CC</span></div>
+        </header>
+
+        <section class="profile-main">
+            <div class="name-row">
+                <div>
+                    <div class="name">Loading...</div>
+                    <div class="handle">@...</div>
+                </div>
+            </div>
+            <p class="bio">
+                Software engineer. Cat person. Espresso-fueled night owl. I reuse the same
+                "secret" for everything because I can never remember more than one thing.
+            </p>
+            <div class="meta">
+                <span>Joined March 2021</span>
+                <span>Loading...</span>
+                <span>Posts mostly after midnight</span>
+            </div>
+            <div class="counts">
+                <strong>528</strong> Following · <strong>1,942</strong> Followers
+            </div>
+            <p class="note">
+                Public profile. Some details may be visible to anyone on the internet.
+            </p>
+        </section>
+
+        <div class="posts-header">Pinned post</div>
+
+        <section class="posts" id="posts" aria-label="Timeline posts">
+            <!-- Filled dynamically by profile.js -->
+        </section>
+    </main>
+
+    <script src="profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>CTF Challenge - Insecure Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #020617;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 25px 50px -12px rgb(15 23 42 / 0.75);
+        }
+        h1 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+            color: #facc15;
+        }
+        p.subtitle {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+        label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+            color: #d1d5db;
+        }
+        input {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            border: 1px solid #374151;
+            background: #111827;
+            color: #e5e7eb;
+            box-sizing: border-box;
+        }
+        input:focus {
+            outline: 2px solid #facc15;
+            outline-offset: 1px;
+        }
+        .field {
+            margin-bottom: 1rem;
+        }
+        button {
+            width: 100%;
+            padding: 0.6rem 0.75rem;
+            border-radius: 9999px;
+            border: none;
+            background: linear-gradient(135deg, #f97316, #facc15);
+            color: #111827;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button:hover {
+            filter: brightness(1.05);
+        }
+        .hint {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        .error {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            color: #f87171;
+        }
+        .success {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #4ade80;
+            word-break: break-all;
+        }
+        code {
+            background: #111827;
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Internal Admin Login</h1>
+        <p class="subtitle">For training only. Do not use real credentials.</p>
+
+        <form id="login-form">
+            <div class="field">
+                <label for="username">Username</label>
+                <input id="username" name="username" autocomplete="off" />
+            </div>
+            <div class="field">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" autocomplete="off" />
+            </div>
+            <button type="submit">Log in</button>
+        </form>
+
+        <div class="hint">
+            Hint: This is a CTF challenge. Remember: <strong>never trust client-side checks</strong>.
+            Viewing the source might be helpful.
+        </div>
+
+        <div id="message" class="error" aria-live="polite"></div>
+        <div id="flag" class="success" style="display:none;"></div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

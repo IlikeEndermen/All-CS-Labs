@@ -1,0 +1,8 @@
+CRACKING WITH JOHN CHALLENGE
+For john the ripper challenge:
+
+Frame it as a data leak, where we have a list of hashed passwords
+Use John the ripper to make players determine which type of hash it is
+Use john the ripper to crack the hashed passwords and stuff
+Make them determine which user has admin privileges
+Have them search the sql database using mysql command lines to extract the database on their device? And then they can determine which users have admin privileges for the website, then they can crack the password and choose one of the users with admin perms, resulting in a solved challenge

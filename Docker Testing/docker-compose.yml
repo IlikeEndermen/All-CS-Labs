@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: john_challenge
+      MYSQL_USER: website_user
+      MYSQL_PASSWORD: change_me
+    volumes:
+      # Initialize schema and data on first run
+      - ./website_users.sql:/docker-entrypoint-initdb.d/website_users.sql:ro
+
+  web:
+    image: cracking-with-john
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: john_challenge
+      DB_USER: website_user
+      DB_PASS: change_me
+    ports:
+      - "8080:80"  # http://localhost:8080
+
+  role-seeder:
+    image: mysql:5.7
+    depends_on:
+      - db
+    restart: "no"
+    entrypoint: >
+      sh -c "
+        until mysql -h db -uroot -prootpass -e 'SELECT 1' >/dev/null 2>&1; do
+          sleep 1;
+        done;
+        mysql -h db -uroot -prootpass john_challenge -e \"UPDATE users SET role='user'; UPDATE users SET role='admin' WHERE id IN (SELECT id FROM (SELECT id FROM users ORDER BY RAND() LIMIT 30) AS t);\";
+      "

@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  md5-collision-challenge:
+    build: .
+    container_name: md5-collision-challenge
+    environment:
+      - FLAG=CTF{replace_this_with_real_flag}
+    ports:
+      - "5000:5000"  # host:container
